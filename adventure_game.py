@@ -50,7 +50,7 @@ def game_over():
 
 
 def house(items):
-    if "faerie" in items:
+    if "fairie" in items:
         print_pause(
             "With the feisty fairie cursing at you from your bag, you head back to the house, hoping the wizard can help.")
         print_pause(
@@ -118,9 +118,10 @@ def cave(items):
 
 
 def forest(items):
-    if "faerie" in items:
+    if "fairie" in items:
         print_pause(
             "The leprachaun has gathered troops of centaurs, unicorns and werewolves, they turn you away and won't let you back in.")
+        choose_location()
     elif "torch" in items:
         print_pause("A thick forest lies in front of you \n"
                     "The trees stand like a sentry against invaders")
@@ -133,7 +134,7 @@ def forest(items):
         print_pause(
             "You jump as you see a leprachaun sitting on a branch ahead of you, snapping twigs and humming softly")
         print_pause(
-            "You ask him if he has heard about the faerie that has been troubling the town")
+            "You ask him if he has heard about the fairie that has been troubling the town")
         print_pause("He looks at you sadly\n"
                     "Shakes his head\n"
                     "And points towards a small clearing to the west")
@@ -148,7 +149,7 @@ def forest(items):
         elif "run" in response:
             print_pause("You choose to run!\n")
             print_pause(
-                "Ducking under a branch and letting a twig ping behind you, in hopes of hitting the fairy, you run as fast as you can")
+                "Ducking under a branch and letting a twig ping behind you, in hopes of hitting the fairie, you run as fast as you can")
             print_pause(
                 "You can hear the beating of her wings close behind and the sound of her raspy cackle as she closes in on you")
             print_pause("She's getting closer!")
@@ -163,17 +164,17 @@ def forest(items):
 
 
 def fight(items):
-    print_pause("You chose to fight!  The faerie swoops towards you, beating her wings ferociously and gnashing her teeny, tiny teeth!")
+    print_pause("You chose to fight!  The fairie swoops towards you, beating her wings ferociously and gnashing her teeny, tiny teeth!")
     if "net" in items:
         print_pause(
-            "Swinging the net wildly in front of you, you hear a sudden SHRIEK of anger as the faerie gets stuck in the net.")
+            "Swinging the net wildly in front of you, you hear a sudden SHRIEK of anger as the fairie gets stuck in the net.")
         print_pause(
             "Wiping the sweat from your brow, you look down at the tiny thing, barely bigger that a butterfly...")
         print_pause("How could something so tiny, cause so much chaos?")
         print_pause("What should you do with it now?")
         print_pause(
-            "Securing the faerie carefully in your bag, you make your way back to the house, the wizard will know what to do.")
-        items.append("faerie")
+            "Securing the fairie carefully in your bag, you make your way back to the house, the wizard will know what to do.")
+        items.append("fairie")
         choose_location()
     else:
         print_pause("You have nothing to help you catch her!")
