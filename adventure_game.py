@@ -53,9 +53,9 @@ def game_over():
     play_again = input("Would you like to play again? \n"
                        "Press Y or N \n").upper()
     if play_again == "Y":
-        play_game()
         global items
         items = []
+        play_game()
     elif play_again == "N":
         print_pause("Thank you for playing")
     else:
