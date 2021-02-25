@@ -12,9 +12,9 @@ emotion = ["anger", "frustration",
            "fury", "irritation", "desperation", "rage", "wrath", "impotence"]
 
 
-def print_pause(message_to_print):
+def print_pause(message_to_print, pause=2):
     print(message_to_print)
-    time.sleep(2)
+    time.sleep(pause)
 
 
 def intro():
@@ -59,7 +59,7 @@ def game_over():
     elif play_again == "N":
         print_pause("Thank you for playing")
     else:
-        game_over()
+        invalid_move()
 
 
 def house():
@@ -76,9 +76,9 @@ def house():
         print_pause("He turns his head...")
         print_pause("You *GASP*! He has no face!")
         print_pause("You stumble backwards and hit your head on the table")
-        print_pause("and everything")
-        print_pause("goes")
-        print_pause("BLACK")
+        print_pause("and everything", 1)
+        print_pause("goes", 1)
+        print_pause("BLACK", 1)
         print_pause("You wake up some time later and realise,"
                     " it was all a dream \n"
                     "YOU WIN!")
@@ -106,7 +106,7 @@ def house():
         print_pause(
             "You turn away from the door and notice "
             "a torch on the ground beside you. "
-            "You bend down to pick it up.  You go back to the field.")
+            "You bend down to pick it up.  You go back to the field.", 3)
         items.append("torch")
         choose_location()
 
@@ -125,8 +125,8 @@ def cave():
         print_pause("You switch on the torch and the cave comes ALIVE!")
         print_pause(
             "You jump back in fear as a huge cloud of swirling claws"
-            " come towards you screeching in anger")
-        print_pause("But WAIT!...")
+            " come towards you screeching in anger", 3)
+        print_pause("But WAIT!...", 1)
         print_pause(
             "It's not a cloud of claws, it's a family of bats"
             " that woke up when you turned on the torch")
@@ -185,7 +185,8 @@ def forest():
             print_pause("You choose to run!\n")
             print_pause(
                 "Ducking under a branch and letting a twig ping behind you,"
-                " in hopes of hitting the fairie, you run as fast as you can")
+                " in hopes of hitting the fairie,"
+                " you run as fast as you can", 3)
             print_pause(
                 "You can hear the beating of her wings close behind"
                 " and the sound of her raspy cackle as she closes in on you")
@@ -211,7 +212,8 @@ def fight():
     print_pause(
         "You chose to fight! "
         f"The fairie swoops towards you in {random.choice(emotion)},"
-        " beating her wings ferociously and gnashing her teeny, tiny teeth!")
+        " beating her wings ferociously and gnashing her teeny,"
+        " tiny teeth!", 3)
     print_pause(
         f"The fairie misses but {random.choice(action)}"
         f" you on the {random.choice(body)}"
@@ -221,7 +223,7 @@ def fight():
         print_pause(
             f"The fairie {random.choice(action)} you"
             f" on the {random.choice(body)}"
-            f" and deals you {damage} of damage!")
+            f" and deals you {damage} of damage!", 3)
         print_pause(
             f"Brandishing the net in {random.choice(emotion)},"
             f" you hear a sudden SHRIEK of {random.choice(emotion)}"
@@ -247,7 +249,7 @@ def fight():
         print_pause(
             "You wait until she's so close that you can feel the air"
             " from her tiny wings against your face")
-        print_pause("You swing the torch...")
+        print_pause("You swing the torch...", 1)
         print_pause(
             f"The fairie {random.choice(action)} you"
             f" on the {random.choice(body)} and deals you {damage} of damage!")
