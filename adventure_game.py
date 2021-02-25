@@ -37,11 +37,11 @@ def choose_location():
                      "1. The House \n"
                      "2. The Cave \n"
                      "3. The Forest \n").lower()
-    if "house" in location:
+    if "house" == location:
         house()
-    elif "cave" in location:
+    elif "cave" == location:
         cave()
-    elif "forest" in location:
+    elif "forest" == location:
         forest()
     else:
         invalid_move()
