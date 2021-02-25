@@ -51,7 +51,7 @@ def choose_location():
 def game_over():
     print_pause("GAME OVER")
     play_again = input("Would you like to play again? \n"
-                       "Press Y or N \n")
+                       "Press Y or N \n").lower()
     if play_again == "Y":
         play_game()
         global items
@@ -60,6 +60,7 @@ def game_over():
         print_pause("Thank you for playing")
     else:
         invalid_move()
+        game_over()
 
 
 def house():
