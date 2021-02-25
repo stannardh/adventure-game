@@ -50,11 +50,11 @@ def choose_location():
 
 def game_over():
     print_pause("GAME OVER")
-    input("Would you like to play again? \n"
-          "Press Y or N \n")
-    if "Y":
+    play_again = input("Would you like to play again? \n"
+                       "Press Y or N \n")
+    if play_again == "Y":
         play_game()
-    elif "N":
+    elif play_again == "N":
         print_pause("Thank you for playing")
 
 
@@ -205,7 +205,7 @@ def forest(items):
 def fight(items):
 
     print_pause(
-        "You chose to fight!"
+        "You chose to fight! "
         f"The fairie swoops towards you in {random.choice(emotion)},"
         " beating her wings ferociously and gnashing her teeny, tiny teeth!")
     print_pause(
