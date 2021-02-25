@@ -38,11 +38,11 @@ def choose_location():
                      "2. The Cave \n"
                      "3. The Forest \n").lower()
     if "house" in location:
-        house(items)
+        house()
     elif "cave" in location:
-        cave(items)
+        cave()
     elif "forest" in location:
-        forest(items)
+        forest()
     else:
         invalid_move()
         choose_location()
@@ -54,11 +54,15 @@ def game_over():
                        "Press Y or N \n")
     if play_again == "Y":
         play_game()
+        global items
+        items = []
     elif play_again == "N":
         print_pause("Thank you for playing")
+    else:
+        game_over()
 
 
-def house(items):
+def house():
     if "fairie" in items:
         print_pause(
             "With the feisty fairie cursing at you from your bag, "
@@ -107,7 +111,7 @@ def house(items):
         choose_location()
 
 
-def cave(items):
+def cave():
     print_pause(
         "You walk towards the entrance of the cave...")
     print_pause("You peer into the mouth of the cave")
@@ -143,7 +147,7 @@ def cave(items):
         choose_location()
 
 
-def forest(items):
+def forest():
     if "fairie" in items:
         print_pause(
             "The leprachaun has gathered troops of centaurs,"
@@ -176,7 +180,7 @@ def forest(items):
                     "Please enter what you wish to do. \n")
         response = input("Fight or Run?\n").lower()
         if "fight" in response:
-            fight(items)
+            fight()
         elif "run" in response:
             print_pause("You choose to run!\n")
             print_pause(
@@ -202,7 +206,7 @@ def forest(items):
         choose_location()
 
 
-def fight(items):
+def fight():
 
     print_pause(
         "You chose to fight! "
